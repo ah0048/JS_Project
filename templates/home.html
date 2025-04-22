@@ -19,15 +19,15 @@
   <body>
     <!-- ========= header ============= -->
     <header id="navbar">
-      <a href="#" class="logo">Home</a>
+      <a href="home.html" class="logo">Home</a>
       <a href="#" class="logo">Contact</a>
       <nav>
         <ul>
           <li>
-            <a href="#"><i class="bi bi-cart-plus"></i></a>
+            <a href="cartPage.html"><i class="bi bi-cart-plus"></i></a>
           </li>
-          <li>User</li>
-          <li><a href="#">Logout</a></li>
+          <li id="usernameDisplay">User</li>
+          <li><a id="logout-btn" href="loginForm.html">Logout</a></li>
         </ul>
       </nav>
       <section class="clear"></section>
@@ -65,167 +65,21 @@
     <section class="filter-section">
       <h2>Product Categories</h2>
       <div class="filter-buttons">
-        <button class="filter-button active">All Products</button>
-        <button class="filter-button">Electronics</button>
-        <button class="filter-button">Jewelery</button>
-        <button class="filter-button">Men's Clothing</button>
-        <button class="filter-button">Women's Clothing</button>
+        <button id="allProducts" class="filter-button active">
+          All Products
+        </button>
+        <button id="Electronics" class="filter-button">Electronics</button>
+        <button id="Jewelery" class="filter-button">Jewelery</button>
+        <button id="Men-Clothing" class="filter-button">Men's Clothing</button>
+        <button id="Women-Clothing" class="filter-button">
+          Women's Clothing
+        </button>
       </div>
     </section>
 
     <!-- products section -->
     <section class="products-section">
-      <div class="products-grid">
-        <!-- Product Card 1 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img
-              src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-              alt="Product"
-            />
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Fjallraven - Foldsack No. 1 Backpack</h3>
-            <p class="product-price">$109.95</p>
-            <div class="product-buttons">
-              <button class="btn view-details">View Details</button>
-              <button class="btn add-to-cart">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product Card 2 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img
-              src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
-              alt="Product"
-            />
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Mens Casual Premium Slim Fit T-Shirts</h3>
-            <p class="product-price">$22.30</p>
-            <div class="product-buttons">
-              <button class="btn view-details">View Details</button>
-              <button class="btn add-to-cart">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product Card 3 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img
-              src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
-              alt="Product"
-            />
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Mens Cotton Jacket</h3>
-            <p class="product-price">$55.99</p>
-            <div class="product-buttons">
-              <button class="btn view-details">View Details</button>
-              <button class="btn add-to-cart">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product Card 4 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img
-              src="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
-              alt="Product"
-            />
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Mens Casual Slim Fit</h3>
-            <p class="product-price">$15.99</p>
-            <div class="product-buttons">
-              <button class="btn view-details">View Details</button>
-              <button class="btn add-to-cart">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product Card 5 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img
-              src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
-              alt="Product"
-            />
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">John Hardy Women's Chain Bracelet</h3>
-            <p class="product-price">$695.00</p>
-            <div class="product-buttons">
-              <button class="btn view-details">View Details</button>
-              <button class="btn add-to-cart">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product Card 6 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img
-              src="https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg"
-              alt="Product"
-            />
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">
-              Solid Gold Petite Micropave Diamond Earrings
-            </h3>
-            <p class="product-price">$168.00</p>
-            <div class="product-buttons">
-              <button class="btn view-details">View Details</button>
-              <button class="btn add-to-cart">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product Card 7 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img
-              src="https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg"
-              alt="Product"
-            />
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">
-              White Gold Plated Princess Diamond Stud Earrings
-            </h3>
-            <p class="product-price">$9.99</p>
-            <div class="product-buttons">
-              <button class="btn view-details">View Details</button>
-              <button class="btn add-to-cart">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product Card 8 -->
-        <div class="product-card">
-          <div class="product-image">
-            <img
-              src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
-              alt="Product"
-            />
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">
-              WD 2TB Elements Portable External Hard Drive
-            </h3>
-            <p class="product-price">$64.00</p>
-            <div class="product-buttons">
-              <button class="btn view-details">View Details</button>
-              <button class="btn add-to-cart">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="products-grid"></div>
     </section>
 
     <!-- Back to Top Button -->
@@ -286,5 +140,6 @@
         <p>&copy; 2025 Your Online Store. All Rights Reserved.</p>
       </div>
     </footer>
+    <script src="../scripts/homePage.js"></script>
   </body>
 </html>
