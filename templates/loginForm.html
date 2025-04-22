@@ -43,14 +43,26 @@
                 class="form-control"
               />
             </div>
+            <div id="invalid-feedback-email" style="display: none; color: red">
+              <p>Invalid email or password</p>
+            </div>
 
+            <div>
+              <p>
+                Yoy dont't have an Account?
+                <a href="../index.html">register here</a>
+              </p>
+            </div>
             <!-- Submit Button -->
             <div class="d-grid">
-              <button type="submit" class="btn btn-success">Sign in</button>
+              <button type="button" id="login-btn" class="btn btn-success">
+                Sign in
+              </button>
             </div>
           </form>
         </div>
       </div>
     </div>
+    <script src="../scripts/loginForm.js"></script>
   </body>
 </html>
