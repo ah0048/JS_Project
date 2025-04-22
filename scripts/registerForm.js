@@ -92,6 +92,7 @@ registerBtn.addEventListener("click", (e) => {
       username: username.value,
       email: email.value,
       password: password.value,
+      cart: [],
     });
     localStorage.setItem("userList", JSON.stringify(users));
     window.location.href = "../templates/loginForm.html";

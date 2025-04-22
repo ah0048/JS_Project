@@ -126,7 +126,49 @@ function fetchProductsCategory(category) {
 }
 
 function addToCart(productId) {
-  console.log(productId);
+  fetch(`https://fakestoreapi.com/products/${productId}`)
+    .then((res) => res.json())
+    .then((product) => {
+      let users = JSON.parse(localStorage.getItem("userList"));
+      for (let i = 0; i < users.length; i++) {
+        if (
+          users[i].username === signedUser.username &&
+          users[i].email === signedUser.email
+        ) {
+          let isProductFound = false;
+
+          users[i].cart = users[i].cart.map((item) => {
+            if (item.productId === product.id) {
+              isProductFound = true;
+              return {
+                ...item,
+                quantity: item.quantity + 1,
+              };
+            }
+            return item;
+          });
+
+          if (!isProductFound) {
+            users[i].cart.push({
+              productId: product.id,
+              title: product.title,
+              category: product.category,
+              price: product.price,
+              image: product.image,
+              quantity: 1,
+            });
+          }
+
+          console.log("found and updated");
+          console.log(users[i]);
+          break;
+        }
+      }
+
+      localStorage.setItem("userList", JSON.stringify(users));
+      alert(`${product.title} was added to your cart successfully!`);
+    })
+    .catch((err) => console.error("Failed to fetch the product:", err));
 }
 
 function viewDetails(productId) {
@@ -134,7 +176,7 @@ function viewDetails(productId) {
     .then((res) => res.json())
     .then((product) => {
       localStorage.setItem("currentProductToView", JSON.stringify(product));
+      window.location.href = "../templates/productPage.html";
     })
     .catch((err) => console.error("Failed to fetch the product:", err));
-  window.location.href = "../templates/productPage.html";
 }
