@@ -1,5 +1,9 @@
 let signedUser = JSON.parse(localStorage.getItem("signedUser")) || {};
+let usernameDisplay = document.getElementById("usernameDisplay");
 
+if (signedUser) {
+  usernameDisplay.innerText = signedUser.username;
+}
 let currentProductToView = JSON.parse(
   localStorage.getItem("currentProductToView")
 );
