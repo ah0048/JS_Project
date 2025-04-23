@@ -8,6 +8,7 @@ let usernameDisplay = document.getElementById("usernameDisplay");
 if (signedUser) {
   usernameDisplay.innerText = signedUser.username;
 }
+
 updatedCart();
 function updatedCart() {
   cartItems.innerHTML = "";
@@ -75,8 +76,8 @@ function updatedCart() {
         <button onclick="shipOrder()" class="buy-now-btn">Buy Now</button>
     `;
       }
+      break;
     }
-    break;
   }
 }
 
@@ -99,8 +100,8 @@ function handleQuantityChange(inputElement, productId) {
         return item;
       });
       localStorage.setItem("userList", JSON.stringify(users));
+      break;
     }
-    break;
   }
   updatedCart();
 }
@@ -121,13 +122,16 @@ function removeProduct(productId) {
         users[i].cart.splice(indexToDelete, 1);
         localStorage.setItem("userList", JSON.stringify(users));
       }
+      break;
     }
-    break;
   }
   updatedCart();
 }
 
 function shipOrder() {
+  console.log("ship");
+  let signedUser = JSON.parse(localStorage.getItem("signedUser")) || {};
+  let users = JSON.parse(localStorage.getItem("userList")) || [];
   for (let i = 0; i < users.length; i++) {
     if (
       users[i].username === signedUser.username &&
@@ -136,7 +140,7 @@ function shipOrder() {
       users[i].cart = [];
       localStorage.setItem("userList", JSON.stringify(users));
       window.location.href = "../templates/shippingPage.html";
+      break;
     }
-    break;
   }
 }
